@@ -1,19 +1,17 @@
-import { useState, useEffect  } from "react";
-import './style/Home.style.js';
+import { useState, useEffect } from "react";
+import "./style/Home.style.js";
+import CatBox from "./CatBox.jsx";
 
-const Home = ({data}) => {
-    console.log(data);
-    // handle click need navigate to catInfo sending array index 
-    const handleClick = () =>{
-    };
-    return (
-<>
-{/* map throgh data arry and display catBox  */}
-<div>
-<button onClick={(index)=> handleClick(index)}>item1</button>
-</div>
-</>
-    )
-}
+const Home = ({ data }) => {
+  console.log(data);
+
+  return (
+    <>
+      {data.map((cat, index) => {
+        return <CatBox key={index} cat={cat} />;
+      })}
+    </>
+  );
+};
 
 export default Home;
