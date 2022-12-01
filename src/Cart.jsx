@@ -20,6 +20,7 @@ const CartItem = ({ cat,onDeleteCat }) => {
     console.log("c", cat)
     return (
         <div className="cart-item">
+            <img src={cat.imgSrc} />
             <p>{cat.name}</p>
             <p>{cat.price}</p>
             <p>{cat.breed}</p>
