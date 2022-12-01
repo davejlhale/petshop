@@ -1,0 +1,8 @@
+.cart-item {
+    border:1px solid black;
+    display:flex;
+    justify-content: space-around;
+    
+}
+
+.cart-item p{ padding:10px 20px;}

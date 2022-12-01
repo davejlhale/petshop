@@ -1,29 +1,35 @@
 import { useState, useEffect, } from "react";
-import './style/Cart.scss';
+import './style/Cart.css';
 
-const Cart = ({ cartData }) => {
+const Cart = ({ cartData,onDeleteCat }) => {
 
     console.log(cartData)
-
+    let totalPrice=0;
     return (
         <>
         {cartData.map((cat, index) => {
-            return <CartItem key={index} className="cart-item" cat={cat}/>
+            totalPrice+=cat.price;
+            return <CartItem key={index} onDeleteCat={onDeleteCat} className="cart-item" cat={cat}/>
         })}
         </>
     )
 
 }
 
-const CartItem = ({ cat }) => {
+const CartItem = ({ cat,onDeleteCat }) => {
     console.log("c", cat)
     return (
-        <div>
+    <div className="body-wrap">
+        <div className="cart-wrapper">
+        <div className="cart-item">
+            <img src={cat.imgSrc} />
             <p>{cat.name}</p>
-            <p>{cat.price}</p>
             <p>{cat.breed}</p>
+            <p>{cat.price}</p>
+            <button onClick={()=>onDeleteCat(cat)} >delete</button>
         </div>
-
+        </div>
+    </div>
     )
 }
 

@@ -5,6 +5,7 @@ const Navbar = () => {
   return (
     <>
     <Nav>
+    <Bars/>
         <NavLink to='/'>
             <h1>CATS4LYF</h1>
         </NavLink>
@@ -14,7 +15,7 @@ const Navbar = () => {
             <NavLink to='/CatInfo' activeStyle>CatInfo</NavLink>
         </NavMenu>
         <NavBtn>
-            <NavBtnLink to='/Checkout'>Checkout</NavBtnLink>
+            <NavBtnLink to='/Cart'>Checkout</NavBtnLink>
         </NavBtn>
         <Bars/>
     </Nav>
