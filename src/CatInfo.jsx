@@ -17,6 +17,7 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
             let num = Math.floor(Math.random() * data.length) || 0;
             console.log(num)
             id = data[num].id
+            //if no name/price do what max did.
         } else {//otherwise use the passed in state.id
             id = location.state.id //new
             catName =location.state.name;
