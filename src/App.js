@@ -5,6 +5,7 @@ import Home from './Home'
 import Cart from './Cart'
 import CatInfo from './CatInfo';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer/indexFooter';
 import './App.css';
 
 function App() {
@@ -44,8 +45,8 @@ function App() {
     <BrowserRouter>
       <Navbar id='mainNav'>
 
-        <Link className='navLink' to = '/'>Home</Link>|
-        <Link to = '/CatInfo'>Cat Info</Link>|
+        <Link to = '/'>Home</Link>
+        <Link to = '/CatInfo'>Cat Info</Link>
         <Link to = '/Cart'>cart</Link>
       </Navbar>
 
@@ -64,9 +65,9 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <footer id="footer">
-        insert footer component here (either as html here or make a react component)
-      </footer>
+      <Footer id="footer">
+        {/* insert footer component here (either as html here or make a react component) */}
+      </Footer>
     </>
   );
 }
