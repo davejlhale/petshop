@@ -29,13 +29,21 @@ function App() {
   }, []);
 
 
+
   // set the cartData to array of 3 elements(name, price, breed)
+
   const onAddToCart = (cat, name, price) => {
     console.log("app: add to cart", name, price, cat);
     let breed = cat.name;
     setCartData([...cartData, { name, price, breed }]);
     console.log("app: cartdata, ", cartData);
   };
+
+  const handleDeleteCat = (cat) => {
+    console.log("cart:delete cat", cat);
+  };
+  console.log("app: in app");
+
   console.log("app: in app");
 
   const onAddToCart=(cat,name,price) =>{
@@ -58,6 +66,7 @@ function App() {
   console.log("app: in app")
 
 
+
   //if datas empty return to wait for it before allowing routing
   if (!catData || isLoading) {
     console.log("app: no data - waiting", catData.length);
@@ -73,9 +82,13 @@ function App() {
           </Link>
           |<Link to="/CatInfo">Cat Info</Link>|<Link to="/Cart">cart</Link>
         </Navbar>
+
+
+
     
     
   <BrowserRouter>
+  
         <Routes>
           <Route
             path="/"
@@ -101,7 +114,10 @@ function App() {
           >
             cat Info{" "}
           </Route>
-          <Route path="/Cart" element={<Cart cartData={cartData} onDeleteCat={handleDeleteCat}/>}>
+          <Route
+            path="/Cart"
+            element={<Cart cartData={cartData} onDeleteCat={handleDeleteCat} />}
+          >
             cart
           </Route>
         </Routes>
