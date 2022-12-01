@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./Home";
-import Cart from "./Cart";
-import CatInfo from "./CatInfo";
-import "./App.css";
+
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes , Route, Link  } from 'react-router-dom';
+import Home from './Home'
+import Cart from './Cart'
+import CatInfo from './CatInfo';
+import Navbar from './components/Navbar';
+import './App.css';
 
 function App() {
   const [catData, setCatData] = useState([]);
@@ -39,16 +41,14 @@ function App() {
   console.log("app: data set length : ", catData.length)
   return (
     <>
-      <BrowserRouter>
-        <header id="header">
-          insert logo/name/navbar cart icon etc as a header either as html or as a react component
-          <h1>Cat4LYF</h1>
-          <nav id="mainNav">
-            <Link className="navLink" to="/">Home</Link>
-            <Link to="/CatInfo">Cat Info</Link>
-            <Link to="/Cart">cart</Link>
-          </nav>
-        </header>
+    <BrowserRouter>
+      <Navbar id='mainNav'>
+
+        <Link className='navLink' to = '/'>Home</Link>|
+        <Link to = '/CatInfo'>Cat Info</Link>|
+        <Link to = '/Cart'>cart</Link>
+      </Navbar>
+
 
 
         <Routes>
