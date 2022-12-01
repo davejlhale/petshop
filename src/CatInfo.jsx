@@ -2,7 +2,7 @@
 import { useLocation,useNavigate } from "react-router-dom"; //new
 import { Wrapper} from './Navbar.styles';
 
-import './style/CatInfo';
+import './style/CatInfo.scss';
 
 // cartData is a state. contains cats name, price and breed.
 // handleAddToCart passes onAddToCart function that sets the cartData to array of 3 elements(name, price, breed)
@@ -21,7 +21,7 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
             let num = Math.floor(Math.random() * data.length) || 0;
             console.log(num)
             id = data[num].id
-            // if no cat then do catBox
+
         } else {//otherwise use the passed in state.id
             id = location.state.id //new
             catName =location.state.name;
