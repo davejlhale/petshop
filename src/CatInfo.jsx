@@ -1,8 +1,6 @@
 // import { useState, useEffect } from "react";
 import { useLocation,useNavigate } from "react-router-dom"; //new
-import { Wrapper} from './Navbar.styles';
-
-import './style/CatInfo.scss';
+import "./style/CatInfo.css";
 
 // cartData is a state. contains cats name, price and breed.
 // handleAddToCart passes onAddToCart function that sets the cartData to array of 3 elements(name, price, breed)
@@ -46,42 +44,87 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
     console.log("catinfo: cat object =", cat);
 
     return (
-        <>
+        <div className="main-ct-info-wrapper">
             {/* display price and image */}
             <div className="cat-im-wrapper">
                 <div>
-                    <p>Name: {catName}</p>
-                    <p>Breed: {cat.name}</p>
+                    <p className="name">Name: {catName}</p>
                     <p>Price: {price}</p>
                 </div>
-                <img alt={cat.name} src={cat.image.url} />
+                <img id="img" alt={cat.name} src={cat.image.url} />
+                <div className="btns">
+                    <button className="btn" onClick={() => handleClick()}>Back</button>
+                    <button className="btn" onClick={() => handleAddToCart(cat,catName,price)}>Add to cart</button>
+                </div>
             </div>
 
             {/* description*/}
             <div className="desc-wrapper">
-                <p>description: {cat.description} It is {cat.temperament}.</p>
+                <div>
+                    <p>description: {cat.description} It is {cat.temperament}.</p>
+                </div>
 
                 {/* description make it a table display!*/}
-                <div>
-                    <p>Country_code: {cat.country_code}</p>
-                    <p>Health Issues: {cat.health_issues}</p>
-                    <p>Child friendly: {cat.child_friendly}</p>
-                    <p>Adaptability: {cat.adaptability}</p>
-                    <p>Dog friendly: {cat.dog_friendly}</p>
-                    <p>Hypoallergenic: {cat.hypoallergenic}</p>
-                    <p>Life Span: {cat.life_span}</p>
-                    <p>Origin: {cat.origin}</p>
-                    <p>Stranger Friendly: {cat.stranger_friendly}</p>
-                    <p>Weight: {cat.weight.metric} Kg</p>
-                    <p>Social needs: {cat.social_needs}</p>
-                    <p>Affection Level: {cat.affection_level}</p>
+                <div className="cat-cracteristics">
+                    <div className="caractcs-item">
+                        <p>Breed:</p>
+                        <p>{cat.name}</p>
+                    </div>
+                    <div className="caractcs-item">
+                        <p>Country_code:</p>
+                        <p>{cat.country_code}</p>
+                    </div>
+                    <div className="caractcs-item">
+                        <p>Health Issues:</p>
+                        <p>{cat.health_issues}</p>
+                    </div>
+                    <div className="caractcs-item">
+                        <p>Child friendly:</p>
+                        <p>{cat.child_friendly}</p>
+                    </div>
+                    <div  className="caractcs-item">
+                        <p>Adaptability:</p>
+                        <p>{cat.adaptability}</p>
+                    </div>
+                    <div  className="caractcs-item">
+                        <p>Dog friendly:</p>
+                        <p>{cat.dog_friendly}</p>
+                    </div>
+                    <div  className="caractcs-item">
+                        <p>Hypoallergenic:</p>
+                        <p>{cat.hypoallergenic}</p>
+                        
+                    </div>
+                    <div  className="caractcs-item">
+                        <p>Life Span: </p>
+                        <p>{cat.life_span}</p>
+                    </div>
+                    <div  className="caractcs-item">
+                        <p>Origin: </p>
+                        <p>{cat.origin}</p>
+                    </div>
+                    <div  className="caractcs-item">
+                        <p>Stranger Friendly: </p>
+                        <p>{cat.stranger_friendly}</p>
+                    </div>
+                    <div  className="caractcs-item">
+                        <p>Weight: </p>
+                        <p>{cat.weight.metric} Kg</p>
+                    </div>
+                    <div className="caractcs-item">
+                        <p>Social needs:</p>
+                        <p> {cat.social_needs}</p>
+                    </div>
+                    <div id="last-row" className="caractcs-item">
+                        <p>Affection Level:</p>
+                        <p>{cat.affection_level}</p>
+                    </div>
+     
                 </div>
             </div>
-            <div className="btns">
-                <button onClick={() => handleClick()}>Back</button>
-                <button onClick={() => handleAddToCart(cat,catName,price)}>Add to cart</button>
-            </div>
-        </>
+
+           
+        </div>
     )
 }
 
