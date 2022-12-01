@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import CatBox from "./CatBox.jsx";
 import "./style/CatBox.css";
-
 const Home = ({ data, handleAddToCart, cartData }) => {
   console.log("home: data set recieved is", data);
 
