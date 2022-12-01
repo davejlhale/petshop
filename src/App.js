@@ -28,16 +28,44 @@ function App() {
     fetchData();
   }, []);
 
+
+
+  // set the cartData to array of 3 elements(name, price, breed)
+
   const onAddToCart = (cat, name, price) => {
     console.log("app: add to cart", name, price, cat);
     let breed = cat.name;
     setCartData([...cartData, { name, price, breed }]);
     console.log("app: cartdata, ", cartData);
   };
+
   const handleDeleteCat = (cat) => {
     console.log("cart:delete cat", cat);
   };
   console.log("app: in app");
+
+  console.log("app: in app");
+
+  const onAddToCart=(cat,name,price) =>{
+    console.log("app: add to cart",name,price,cat)
+    let breed=cat.name;
+    let imgSrc = cat.image.url
+    console.log("****",cat)
+    setCartData([...cartData,{name,price,breed,imgSrc}])
+    console.log("app: cartdata, ",cartData)
+  }
+  const handleDeleteCat= (cat)=> {
+    let data = [...cartData]
+    console.log("cart:delete cat",cat)
+    const index = data.indexOf(cat);
+    if (index > -1) { // 
+      data.splice(index, 1); // 2nd parameter means remove one item only
+      setCartData(data)
+    }
+}
+  console.log("app: in app")
+
+
 
   //if datas empty return to wait for it before allowing routing
   if (!catData || isLoading) {
@@ -55,6 +83,12 @@ function App() {
           |<Link to="/CatInfo">Cat Info</Link>|<Link to="/Cart">cart</Link>
         </Navbar>
 
+
+
+    
+    
+  <BrowserRouter>
+  
         <Routes>
           <Route
             path="/"
