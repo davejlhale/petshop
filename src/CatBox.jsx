@@ -2,7 +2,7 @@ import { faker } from "@faker-js/faker";
 
 import { useNavigate } from "react-router-dom"; //new
 import { useState } from "react";
-import "./style/CatBox.scss";
+import "./style/CatBox.css";
 
 const CatBox = ({ cat, cartData, handleAddToCart }) => {
   const navigate = useNavigate(); //new

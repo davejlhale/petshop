@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation,useNavigate } from "react-router-dom"; //new
 
-import './style/CatInfo.scss';
+import './style/CatInfo.css';
 
 // cartData is a state. contains cats name, price and breed.
 // handleAddToCart passes onAddToCart function that sets the cartData to array of 3 elements(name, price, breed)
