@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
@@ -6,6 +7,7 @@ import CatInfo from "./CatInfo";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import { faker } from "@faker-js/faker";
+
 import imgIcon from "./images/cartIcon.png"
 function App() {
   const [catData, setCatData] = useState([]);
@@ -73,6 +75,7 @@ function App() {
   console.log("app: data set length : ", catData.length);
   return (
     <>
+
       <BrowserRouter>
         <Navbar id="mainNav" imgIcon={imgIcon} count={cartData.length}>
         </Navbar>
@@ -111,10 +114,10 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <footer id="footer">
-        insert footer component here (either as html here or make a react
-        component)
-      </footer>
+      <Footer id="footer">
+        {/* insert footer component here (either as html here or make a react component) */}
+      </Footer>
+
     </>
   );
 }
