@@ -1,24 +1,28 @@
 import React from 'react'
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
+import "./icon.css"
 
-const Navbar = () => {
+const Navbar = ({ count, imgIcon }) => {
   return (
     <>
-    <Nav>
-    <Bars/>
+      <Nav>
+        <Bars />
         <NavLink to='/'>
-            <h1>CATS4LYF</h1>
+          <h1>CATS4LYF</h1>
         </NavLink>
         <NavMenu>
-            <NavLink to='/' activeStyle>Home</NavLink>&nbsp&nbsp
-            <NavLink to='/Cart' activeStyle>Cart</NavLink>&nbsp&nbsp
-            <NavLink to='/CatInfo' activeStyle>CatInfo</NavLink>
+          <NavLink to='/' activeStyle>Home</NavLink>&nbsp&nbsp
+          {/* <NavLink to='/Cart' activeStyle>Cart</NavLink>&nbsp&nbsp */}
+          <NavLink to='/CatInfo' activeStyle>CatInfo</NavLink>
         </NavMenu>
         <NavBtn>
-            <NavBtnLink to='/Cart'>Checkout</NavBtnLink>
+          <NavBtnLink id="cart-icon" to='/Cart'>
+            <img alt="cat sat in shopping cart" src={imgIcon} />
+            <p id="cart-item-count">{count}</p>
+          </NavBtnLink>
         </NavBtn>
-        <Bars/>
-    </Nav>
+        <Bars />
+      </Nav>
     </>
   );
 };

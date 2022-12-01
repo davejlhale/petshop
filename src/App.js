@@ -6,6 +6,7 @@ import CatInfo from "./CatInfo";
 import Navbar from "./components/Navbar";
 import "./App.css";
 
+import imgIcon from "./images/cartIcon.png"
 function App() {
   const [catData, setCatData] = useState([]);
   const [cartData, setCartData] = useState([]);
@@ -69,11 +70,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar id="mainNav">
-          <Link className="navLink" to="/">
-            Home
-          </Link>
-          |<Link to="/CatInfo">Cat Info</Link>|<Link to="/Cart">cart</Link>
+        <Navbar id="mainNav" imgIcon={imgIcon} count={cartData.length}>
+         
         </Navbar>
 
       
