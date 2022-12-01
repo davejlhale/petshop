@@ -5,7 +5,9 @@ import Cart from "./Cart";
 import CatInfo from "./CatInfo";
 import Navbar from "./components/Navbar";
 import "./App.css";
+import { faker } from "@faker-js/faker";
 
+import imgIcon from "./images/cartIcon.png";
 function App() {
   const [catData, setCatData] = useState([]);
   const [cartData, setCartData] = useState([]);
@@ -17,7 +19,8 @@ function App() {
       const response = await fetch(
         "https://api.thecatapi.com/v1/breeds?limit=8"
       );
-      const data = await response.json();
+      let data = await response.json();
+
       setCatData(() => {
         return data;
       });
@@ -28,37 +31,37 @@ function App() {
     fetchData();
   }, []);
 
-
-
-  // set the cartData to array of 3 elements(name, price, breed)
-
-
-
-
-  console.log("app: in app");
-
-  console.log("app: in app");
-
-  const onAddToCart=(cat,name,price) =>{
-    console.log("app: add to cart",name,price,cat)
-    let breed=cat.name;
-    let imgSrc = cat.image.url
-    console.log("****",cat)
-    setCartData([...cartData,{name,price,breed,imgSrc}])
-    console.log("app: cartdata, ",cartData)
-  }
-  const handleDeleteCat= (cat)=> {
-    let data = [...cartData]
-    console.log("cart:delete cat",cat)
-    const index = data.indexOf(cat);
-    if (index > -1) { // 
-      data.splice(index, 1); // 2nd parameter means remove one item only
-      setCartData(data)
+  const addNamePrice = (data) => {
+    console.log("adding names");
+    if (data === undefined || data === null) {
+      return;
     }
-}
-  console.log("app: in app")
-
-
+    data.map((cat, index) => {
+      if (!cat.named) cat.named = faker.name.firstName();
+      if (!cat.price) cat.price = faker.commerce.price(100, 1000, 2, "£");
+      console.log(cat);
+    });
+  };
+  addNamePrice(catData);
+  const onAddToCart = (cat, name, price) => {
+    console.log("app: add to cart", name, price, cat);
+    let breed = cat.name;
+    let imgSrc = cat.image.url;
+    console.log("****", cat);
+    setCartData([...cartData, { name, price, breed, imgSrc }]);
+    console.log("app: cartdata, ", cartData);
+  };
+  const handleDeleteCat = (cat) => {
+    let data = [...cartData];
+    console.log("cart:delete cat", cat);
+    const index = data.indexOf(cat);
+    if (index > -1) {
+      //
+      data.splice(index, 1); // 2nd parameter means remove one item only
+      setCartData(data);
+    }
+  };
+  console.log("app: in app");
 
   //if datas empty return to wait for it before allowing routing
   if (!catData || isLoading) {
@@ -69,18 +72,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar id="mainNav">
-          <Link className="navLink" to="/">
-            Home
-          </Link>
-          |<Link to="/CatInfo">Cat Info</Link>|<Link to="/Cart">cart</Link>
-        </Navbar>
+        <Navbar id="mainNav" imgIcon={imgIcon} count={cartData.length}></Navbar>
 
-      
-
-    
-  
-  
         <Routes>
           <Route
             path="/"
@@ -115,10 +108,9 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <footer id="footer">
-        insert footer component here (either as html here or make a react
-        component)
-      </footer>
+      {/*<Footer id="footer">
+      insert footer component here (either as html here or make a react component) 
+      </Footer> */}
     </>
   );
 }

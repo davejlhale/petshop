@@ -1,10 +1,87 @@
 .cat-box {
   display: flex;
+  flex: 1 1 25%;
   flex-direction: column;
+  box-sizing: border-box;
+  /* border: 2px solid #343a40; */
+  padding: 8px;
+  margin: 20px;
+  align-items: center;
+  border-radius: 1.5rem;
+  box-shadow: 10px 10px 10px 1px black;
 }
 
 .screen-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100%;
+  margin: 10vh 3vw 10vh 3vw;
+  background-color: #ced4da;
+}
+
+.cat-box:hover {
+  background-color: #adb5bd;
+  transform: scale(1.05, 1.05);
+  box-shadow: 20px 20px 20px 1px black;
+}
+
+.cat-box img {
+  border-radius: 1.5rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px black;
+  width: 250px;
+  height: 200px;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+.cat-box .txt-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px 0;
+  background-color: #495057;
+  padding: 8px;
+  border-radius: 1.5rem;
+  width: 250px;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.cat-box .txt-wrapper p {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.cat-box .btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px 0;
+  padding: 8px;
+  width: 250px;
+}
+
+.cat-box .btn-wrapper button {
+  background-color: #495057;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+  width: 100px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.cat-box .btn-wrapper button:hover {
+  cursor: pointer;
+}
+
+.cat-box .btn-wrapper button:active {
+  transform: translate(0%, 3px);
+}
+
+.cat-box:active {
+  transform: translate(0%, 3px);
 }
