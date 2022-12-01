@@ -32,16 +32,9 @@ function App() {
 
   // set the cartData to array of 3 elements(name, price, breed)
 
-  const onAddToCart = (cat, name, price) => {
-    console.log("app: add to cart", name, price, cat);
-    let breed = cat.name;
-    setCartData([...cartData, { name, price, breed }]);
-    console.log("app: cartdata, ", cartData);
-  };
 
-  const handleDeleteCat = (cat) => {
-    console.log("cart:delete cat", cat);
-  };
+
+
   console.log("app: in app");
 
   console.log("app: in app");
@@ -83,11 +76,10 @@ function App() {
           |<Link to="/CatInfo">Cat Info</Link>|<Link to="/Cart">cart</Link>
         </Navbar>
 
-
+      
 
     
-    
-  <BrowserRouter>
+  
   
         <Routes>
           <Route

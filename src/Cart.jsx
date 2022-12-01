@@ -22,6 +22,7 @@ const CartItem = ({ cat,onDeleteCat }) => {
     <div className="body-wrap">
         <div className="cart-wrapper">
         <div className="cart-item">
+            <img src={cat.imgSrc} />
             <p>{cat.name}</p>
             <p>{cat.breed}</p>
             <p>{cat.price}</p>
