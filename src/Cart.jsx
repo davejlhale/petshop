@@ -1,5 +1,5 @@
 import { useState, useEffect, } from "react";
-import './style/Cart.scss';
+import './style/Cart.css';
 
 const Cart = ({ cartData,onDeleteCat }) => {
 
@@ -19,14 +19,17 @@ const Cart = ({ cartData,onDeleteCat }) => {
 const CartItem = ({ cat,onDeleteCat }) => {
     console.log("c", cat)
     return (
+    <div className="body-wrap">
+        <div className="cart-wrapper">
         <div className="cart-item">
             <img src={cat.imgSrc} />
             <p>{cat.name}</p>
-            <p>{cat.price}</p>
             <p>{cat.breed}</p>
+            <p>{cat.price}</p>
             <button onClick={()=>onDeleteCat(cat)} >delete</button>
         </div>
-
+        </div>
+    </div>
     )
 }
 
