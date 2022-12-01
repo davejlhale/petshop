@@ -2,6 +2,17 @@ import { useState, useEffect } from "react";
 import './style/CatInfo.style.js';
 
 const CatInfo = ({data}) => {
+const [catPrice, setCatPrice] = useState("");
+    useEffect(() => {
+        const fetchPrice = async () => {
+          const response = await fetch(
+            ""
+          );
+          const price = await response.json();
+          setCatPrice(price);
+        };
+        fetchData();
+      }, []);
     console.log(data)
    
     //html with the data from data
@@ -15,7 +26,7 @@ const CatInfo = ({data}) => {
                 // </Link> */}
                 <p>Name: {cat.name}</p>
                 <img src={cat.image.url}/>
-                <p>Price: £10</p>
+                <p>Price:{catPrice}</p>
                 <p>Country_code: {cat.country_code}</p>
                 <p>Health Issues: {cat.health_issues}</p>
                 <p>Child friendly: {cat.child_friendly}</p>
