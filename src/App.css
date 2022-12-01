@@ -1,14 +1,22 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-#mainNav{
-    display: flex;
+#mainNav {
+  display: flex;
+}
+
+img {
+  width: 200px;
 }
 
 
 img { width:200px;}
+
+
+body {
+  background-color: #ced4da;
+}
 

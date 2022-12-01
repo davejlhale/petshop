@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./Home";
-import Cart from "./Cart";
-import CatInfo from "./CatInfo";
-import Navbar from "./components/Navbar";
-import "./App.css";
+
+
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes , Route, Link  } from 'react-router-dom';
+import Home from './Home'
+import Cart from './Cart'
+import CatInfo from './CatInfo';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer/indexFooter';
+import './App.css';
+
 
 import imgIcon from "./images/cartIcon.png"
 function App() {
@@ -69,6 +73,7 @@ function App() {
   console.log("app: data set length : ", catData.length);
   return (
     <>
+
       <BrowserRouter>
         <Navbar id="mainNav" imgIcon={imgIcon} count={cartData.length}>
          
@@ -113,10 +118,10 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <footer id="footer">
-        insert footer component here (either as html here or make a react
-        component)
-      </footer>
+      <Footer id="footer">
+        {/* insert footer component here (either as html here or make a react component) */}
+      </Footer>
+
     </>
   );
 }
