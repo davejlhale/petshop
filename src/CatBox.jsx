@@ -13,7 +13,12 @@ const CatBox = ({ cat, cartData, handleAddToCart }) => {
     }); //new the button onclick navigate that passes the cat.id
   };
 
+  // // console.log(handleAddToCart)
+  // const git status = faker.name.firstName();
+
+
   // const rndmName = faker.name.firstName();
+
   // const rndmPrice = faker.commerce.price(100, 1000, 2, "£");
   try {
     return (
@@ -29,16 +34,6 @@ const CatBox = ({ cat, cartData, handleAddToCart }) => {
           <button onClick={() => handleAddToCart(cat, cat.named, cat.price)}>
             Add to cart
           </button>
-
-
-        <img src={cat.image.url} alt="cat" />
-        <p>{cat.named}</p>
-        <p>{cat.price}</p>
-        <button onClick={() => handleClick()}>Info</button>
-        <button onClick={() => handleAddToCart(cat, cat.named, cat.price)}>
-          Add to cart
-        </button>
-    
 
         </div>
 

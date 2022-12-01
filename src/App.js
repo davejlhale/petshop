@@ -114,9 +114,9 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <Footer id="footer">
+      <footer id="footer">
         {/* insert footer component here (either as html here or make a react component) */}
-      </Footer>
+      </footer>
 
     </>
   );
