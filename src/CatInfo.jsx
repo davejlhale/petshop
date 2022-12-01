@@ -49,18 +49,18 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
             <div className="cat-im-wrapper">
                 <div>
                     <p className="name">Name: {catName}</p>
-                    <p>Price: {price}</p>
+                    <p>Price: <span>{price}</span></p>
                 </div>
                 <img id="img" alt={cat.name} src={cat.image.url} />
                 <div className="btns">
                     <button className="btn" onClick={() => handleClick()}>Back</button>
-                    <button className="btn" onClick={() => handleAddToCart(cat,catName,price)}>Add to cart</button>
+                    <button className="add-btn" onClick={() => handleAddToCart(cat,catName,price)}>Add to cart</button>
                 </div>
             </div>
 
             {/* description*/}
             <div className="desc-wrapper">
-                <div>
+                <div id="cat-desc">
                     <p>description: {cat.description} It is {cat.temperament}.</p>
                 </div>
 
