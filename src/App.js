@@ -28,11 +28,19 @@ function App() {
   const onAddToCart=(cat,name,price) =>{
     console.log("app: add to cart",name,price,cat)
     let breed=cat.name;
-    setCartData([...cartData,{name,price,breed}])
+    let imgSrc = cat.image.url
+    console.log("****",cat)
+    setCartData([...cartData,{name,price,breed,imgSrc}])
     console.log("app: cartdata, ",cartData)
   }
   const handleDeleteCat= (cat)=> {
+    let data = [...cartData]
     console.log("cart:delete cat",cat)
+    const index = data.indexOf(cat);
+    if (index > -1) { // 
+      data.splice(index, 1); // 2nd parameter means remove one item only
+      setCartData(data)
+    }
 }
   console.log("app: in app")
 
@@ -45,13 +53,12 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Navbar id='mainNav'>
-
+      {/* <Navbar id='mainNav'>
         <Link className='navLink' to = '/'>Home</Link>|
         <Link to = '/CatInfo'>Cat Info</Link>|
         <Link to = '/Cart'>cart</Link>
-      </Navbar>
-
+      </Navbar> */}
+<Navbar/>
         <Routes>
           <Route path="/" element={<Home handleAddToCart={onAddToCart} data={catData} cartData={cartData}  />}>
             Home
