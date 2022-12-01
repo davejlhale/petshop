@@ -3,6 +3,7 @@ import { BrowserRouter, Routes , Route, Link  } from 'react-router-dom';
 import Home from './Home'
 import Cart from './Cart'
 import CatInfo from './CatInfo';
+import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
@@ -19,12 +20,12 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <nav id='mainNav'>
+      <Navbar id='mainNav'>
 
         <Link className='navLink' to = '/'>Home</Link>|
         <Link to = '/CatInfo'>Cat Info</Link>|
         <Link to = '/Cart'>cart</Link>
-      </nav>
+      </Navbar>
 
       <Routes >
         <Route path='/' element= {<Home data = {catData}/>}>Home</Route>
