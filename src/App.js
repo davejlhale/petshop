@@ -23,11 +23,10 @@ function App() {
         "https://api.thecatapi.com/v1/breeds?limit=8"
       );
 
-      const data = await response.json();
+      let data = await response.json();
       setCatData(() => { return data });
       setLoading(() => { return false })
 
-      let data = await response.json();
        
       setCatData(() => {
         return data;
