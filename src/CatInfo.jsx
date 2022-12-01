@@ -3,6 +3,9 @@ import { useLocation,useNavigate } from "react-router-dom"; //new
 
 import './style/CatInfo.scss';
 
+// cartData is array state contains cats name, price and breede.
+// set the cartData to array of 3 elements(name, price, breed)
+// handleAddToCart 
 const CatInfo = ({ data,handleAddToCart,cartData }) => {
     
     const location = useLocation(); //new
@@ -17,6 +20,7 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
             let num = Math.floor(Math.random() * data.length) || 0;
             console.log(num)
             id = data[num].id
+            // if no cat then do catBox
         } else {//otherwise use the passed in state.id
             id = location.state.id //new
             catName =location.state.name;
