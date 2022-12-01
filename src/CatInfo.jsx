@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { useLocation,useNavigate } from "react-router-dom"; //new
+import { Wrapper} from './Navbar.styles';
 
-import './style/CatInfo.scss';
+import './style/CatInfo';
 
 // cartData is a state. contains cats name, price and breed.
 // handleAddToCart passes onAddToCart function that sets the cartData to array of 3 elements(name, price, breed)
@@ -45,32 +46,42 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
     console.log("catinfo: cat object =", cat);
 
     return (
-        <div >
+        <>
             {/* display price and image */}
-            <p>Name: {catName}</p>
-            <p>Breed: {cat.name}</p>
-            <p>Price: {price}</p>
-            <img alt={cat.name} src={cat.image.url} />
+            <div className="cat-im-wrapper">
+                <div>
+                    <p>Name: {catName}</p>
+                    <p>Breed: {cat.name}</p>
+                    <p>Price: {price}</p>
+                </div>
+                <img alt={cat.name} src={cat.image.url} />
+            </div>
 
             {/* description*/}
-            <p>description: {cat.description} It is {cat.temperament}.</p>
+            <div className="desc-wrapper">
+                <p>description: {cat.description} It is {cat.temperament}.</p>
 
-            {/* description make it a table display!*/}
-            <p>Country_code: {cat.country_code}</p>
-            <p>Health Issues: {cat.health_issues}</p>
-            <p>Child friendly: {cat.child_friendly}</p>
-            <p>Adaptability: {cat.adaptability}</p>
-            <p>dog friendly: {cat.dog_friendly}</p>
-            <p>hypoallergenic: {cat.hypoallergenic}</p>
-            <p>life Span: {cat.life_span}</p>
-            <p>origin: {cat.origin}</p>
-            <p>stranger Friendly: {cat.stranger_friendly}</p>
-            <p>weight: {cat.weight.metric} Kg</p>
-            <p>social_needs: {cat.social_needs}</p>
-
-            <button onClick={() => handleClick()}>Back</button>
-            <button onClick={() => handleAddToCart(cat,catName,price)}>Add to cart</button>
-        </div>
+                {/* description make it a table display!*/}
+                <div>
+                    <p>Country_code: {cat.country_code}</p>
+                    <p>Health Issues: {cat.health_issues}</p>
+                    <p>Child friendly: {cat.child_friendly}</p>
+                    <p>Adaptability: {cat.adaptability}</p>
+                    <p>Dog friendly: {cat.dog_friendly}</p>
+                    <p>Hypoallergenic: {cat.hypoallergenic}</p>
+                    <p>Life Span: {cat.life_span}</p>
+                    <p>Origin: {cat.origin}</p>
+                    <p>Stranger Friendly: {cat.stranger_friendly}</p>
+                    <p>Weight: {cat.weight.metric} Kg</p>
+                    <p>Social needs: {cat.social_needs}</p>
+                    <p>Affection Level: {cat.affection_level}</p>
+                </div>
+            </div>
+            <div className="btns">
+                <button onClick={() => handleClick()}>Back</button>
+                <button onClick={() => handleAddToCart(cat,catName,price)}>Add to cart</button>
+            </div>
+        </>
     )
 }
 
