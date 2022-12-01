@@ -31,6 +31,9 @@ function App() {
     setCartData([...cartData,{name,price,breed}])
     console.log("app: cartdata, ",cartData)
   }
+  const handleDeleteCat= (cat)=> {
+    console.log("cart:delete cat",cat)
+}
   console.log("app: in app")
 
   //if datas empty return to wait for it before allowing routing
@@ -49,8 +52,6 @@ function App() {
         <Link to = '/Cart'>cart</Link>
       </Navbar>
 
-
-
         <Routes>
           <Route path="/" element={<Home handleAddToCart={onAddToCart} data={catData} cartData={cartData}  />}>
             Home
@@ -58,7 +59,7 @@ function App() {
           <Route path="/CatInfo" element={<CatInfo handleAddToCart={onAddToCart} data={catData}  cartData={cartData} />}>
             cat Info{" "}
           </Route>
-          <Route path="/Cart" element={<Cart cartData={cartData} />}>
+          <Route path="/Cart" element={<Cart cartData={cartData} onDeleteCat={handleDeleteCat}/>}>
             cart
           </Route>
         </Routes>
