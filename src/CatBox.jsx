@@ -18,13 +18,17 @@ const CatBox = ({ cat, cartData, handleAddToCart }) => {
   try {
     return (
       <div className="cat-box">
-        <img src={cat.image.url} alt="cat" />
-        <p>{rndmName}</p>
-        <p>{rndmPrice}</p>
-        <button onClick={() => handleClick()}>Info</button>
-        <button onClick={() => handleAddToCart(cat, rndmName, rndmPrice)}>
-          Add to cart
-        </button>
+        <img onClick={() => handleClick()} src={cat.image.url} alt="cat" />
+        <div className="txt-wrapper">
+          <p>{rndmName}</p>
+          <p>{rndmPrice}</p>
+        </div>
+        <div className="btn-wrapper">
+          <button onClick={() => handleClick()}>Info</button>
+          <button onClick={() => handleAddToCart(cat, rndmName, rndmPrice)}>
+            Add to cart
+          </button>
+        </div>
       </div>
     );
   } catch (err) {
