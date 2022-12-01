@@ -27,7 +27,6 @@ const CatBox = ({ cat, cartData, handleAddToCart }) => {
           Add to cart
         </button>
     
-        </div>
 
       </div>
     );
