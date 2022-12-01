@@ -1,4 +1,5 @@
 
+
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
@@ -7,8 +8,9 @@ import CatInfo from "./CatInfo";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import { faker } from "@faker-js/faker";
-
+import Footer from './components/Footer/footer';
 import imgIcon from "./images/cartIcon.png"
+
 function App() {
   const [catData, setCatData] = useState([]);
   const [cartData, setCartData] = useState([]);
@@ -16,10 +18,15 @@ function App() {
   //fetch 8 cats
   useEffect(() => {
     const fetchData = async () => {
-      console.log("app:useeffect: fetching data");
+      console.log("app:useeffect: fetching data")
       const response = await fetch(
         "https://api.thecatapi.com/v1/breeds?limit=8"
       );
+
+      const data = await response.json();
+      setCatData(() => { return data });
+      setLoading(() => { return false })
+
       let data = await response.json();
        
       setCatData(() => {
@@ -29,9 +36,11 @@ function App() {
         return false;
       });
    
+
     };
     fetchData();
   }, []);
+
 
   const addNamePrice=(data)=> {
     console.log("adding names")
@@ -63,18 +72,19 @@ function App() {
       setCartData(data)
     }
   }
+
   console.log("app: in app")
-
-
 
   //if datas empty return to wait for it before allowing routing
   if (!catData || isLoading) {
     console.log("app: no data - waiting", catData.length);
     return;
   }
-  console.log("app: data set length : ", catData.length);
+  console.log("app: data set length : ", catData.length)
   return (
     <>
+
+
 
       <BrowserRouter>
         <Navbar id="mainNav" imgIcon={imgIcon} count={cartData.length}>
@@ -91,32 +101,20 @@ function App() {
               />
             }
           >
+          
             Home
           </Route>
-          <Route
-            path="/CatInfo"
-            element={
-              <CatInfo
-                handleAddToCart={onAddToCart}
-                data={catData}
-                cartData={cartData}
-              />
-            }
-          >
+          <Route path="/CatInfo" element={<CatInfo handleAddToCart={onAddToCart} data={catData}  cartData={cartData} />}>
             cat Info{" "}
           </Route>
-          <Route
-            path="/Cart"
-            element={<Cart cartData={cartData} onDeleteCat={handleDeleteCat} />}
-          >
+          <Route path="/Cart" element={<Cart cartData={cartData} onDeleteCat={handleDeleteCat}/>}>
             cart
           </Route>
         </Routes>
       </BrowserRouter>
 
-      <footer id="footer">
-        {/* insert footer component here (either as html here or make a react component) */}
-      </footer>
+
+      <Footer />
 
     </>
   );
