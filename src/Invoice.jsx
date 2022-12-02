@@ -6,13 +6,16 @@ const Invoice = () => {
  
   return (
     <>
-      {/* link the cats name here */}
+    <div className="main">
       <div className="invoice-wrapper">
-        <h3>Thank you for your purchase!</h3>
-        <p>our order will be delivered to you within 3 working days by our delivery team.</p>y
+        <div>
+            <h3>Thank you for your purchase!</h3>
+            <p>Your order will be delivered to you within 3 working days by our delivery team.</p>
+        </div>
+        <div className="link-wrapper">
+            <Link className="link" to="/">Back to Shop</Link> 
+        </div>
       </div>
-      <div className="link-wrapper">
-       <Link className="btns" to="/">Back to Shop</Link> 
       </div>
     </>
   );

@@ -1,0 +1,43 @@
+.main {
+  height: 800px;
+  background-image: url("../images/cat.jpg");
+  background-size: 650px;
+  padding-top: 2rem;
+}
+
+.invoice-wrapper {
+  width: 60%;
+  margin: 5rem auto;
+  background-color: #acc7c700;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 450px;
+  align-items: center;
+  color: #ced4da;
+  font-size: 1.5rem;
+}
+
+.invoice-wrapper h3 {
+  color: forestgreen;
+}
+
+.link-wrapper {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  background-color: #608d1c;
+  border: none;
+  box-shadow: 1px 1px 1px 1px #000000a3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-wrapper .link {
+  text-decoration: none;
+  color: black;
+}
