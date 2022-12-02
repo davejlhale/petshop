@@ -44,10 +44,12 @@ export const NavMenu = styled.div`
   }
 `;
 export const NavBtn = styled.nav`
+
   display: flex;
   align-items: center;
   margin-right: 24px;
 `;
+
 
 export const NavBtnLink = styled(Link)`
   // border-radius: 4px;
