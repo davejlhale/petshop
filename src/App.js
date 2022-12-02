@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart";
 import CatInfo from "./CatInfo";
@@ -12,6 +12,8 @@ import PageNotFound from "./PageNotFound";
 import Invoice from "./Invoice"
 
 function App() {
+  
+  // const navigate = useNavigate();
   const [catData, setCatData] = useState([]);
   const [cartData, setCartData] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -41,6 +43,24 @@ function App() {
     fetchData();
   }, []);
 
+ 
+
+  const handleEmptyCart = () => {
+    console.log("handle clear cart")
+    console.log(catData)
+    console.log(cartData)
+    let data = [...catData];
+    console.log("cat data",data)
+    cartData.map((cat) => {;
+      let catObj=cat.cat
+      data = ( [...data, catObj])
+    })
+
+    
+    setCartData([]);
+    console.log("DATA*****",data)
+    setCatData(data)
+  }
   const addNamePrice = (data) => {
     console.log("adding names");
     if (data === undefined || data === null) {
@@ -49,16 +69,17 @@ function App() {
     data.map((cat, index) => {
       if (!cat.named) cat.named = faker.name.firstName();
       if (!cat.price) cat.price = faker.commerce.price(100, 1000, 2, "£");
-      console.log(cat);
+      // console.log(cat);
     });
   };
   addNamePrice(catData);
+
   const onAddToCart = (cat, name, price) => {
     console.log("app: add to cart", name, price, cat);
     let breed = cat.name;
     let imgSrc = cat.image.url;
     console.log("****", cat);
-    setCartData([...cartData, { name, price, breed, imgSrc }]);
+    setCartData([...cartData, { name, price, breed, imgSrc,cat }]);
     console.log("app: cartdata, ", cartData);
     let data = [...catData];
     const index = data.indexOf(cat);
@@ -73,10 +94,15 @@ function App() {
     const index = data.indexOf(cat);
     if (index > -1) {
       //
+      setCatData([...catData,cat.cat])
       data.splice(index, 1); // 2nd parameter means remove one item only
       setCartData(data);
     }
   };
+
+  const handleSale=()=>{
+    setCartData([])
+  }
 
   console.log("app: in app");
 
@@ -94,39 +120,41 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={ <Home
+            element={<Home
               handleAddToCart={onAddToCart}
               data={catData}
-              cartData={cartData} 
+              cartData={cartData}
             />}
           />
-          <Route 
-            path="/CatInfo" 
-            element={<CatInfo 
-              handleAddToCart={onAddToCart} 
-              data={catData} 
-              cartData={cartData} 
-            />} 
-           />
-          <Route 
-            path="/Cart" 
-            element={<Cart 
-              cartData={cartData} 
-              onDeleteCat={handleDeleteCat} 
-            />} 
+          <Route
+            path="/CatInfo"
+            element={<CatInfo
+              handleAddToCart={onAddToCart}
+              data={catData}
+              cartData={cartData}
+            />}
           />
-          <Route 
-            path="*" 
-            element={<PageNotFound 
-            />} 
+          <Route
+            path="/Cart"
+            element={<Cart
+              cartData={cartData}
+              onDeleteCat={handleDeleteCat}
+              handleEmptyCart={handleEmptyCart}
+              handleSale={handleSale}
+            />}
           />
-          <Route 
-            path="/Invoice" 
-            element={<Invoice 
-            />} 
+          <Route
+            path="*"
+            element={<PageNotFound
+            />}
           />
-            
-         
+          <Route
+            path="/Invoice"
+            element={<Invoice
+            />}
+          />
+
+
         </Routes>
       </BrowserRouter>
 

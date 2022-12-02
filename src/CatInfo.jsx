@@ -6,8 +6,9 @@ import "./style/CatInfo.css";
 // handleAddToCart passes onAddToCart function that sets the cartData to array of 3 elements(name, price, breed)
 
 const CatInfo = ({ data,handleAddToCart,cartData }) => {
-    
+    const navigate = useNavigate();//new
     const location = useLocation(); //new
+    if (data===null || data===undefined || data.length===0) return  <h1> sorry no cats left</h1>
     let catName="";
     let price=""
     const getSelectedCatId = () => {
@@ -29,7 +30,7 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
         return id;
     }//end of getSelectedCatId()
 
-    const navigate = useNavigate();//new
+    
 
     const handleClick = () => {
       console.log("catinfo: home btn clicked", cat.id);
@@ -43,7 +44,7 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
     const cat = data.filter(cat => { return cat.id === passedInCatId })[0] //new
     console.log("catinfo: cat object =", cat);
 
-    // if(cat.named) {return}
+     
     return (
         <div className="main-ct-info-wrapper">
             {/* display price and image */}

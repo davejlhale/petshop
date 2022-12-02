@@ -1,8 +1,13 @@
 import { useState, useEffect, } from "react";
 import './style/Cart.css';
+import { useNavigate } from "react-router-dom";
 
-const Cart = ({ cartData,onDeleteCat,handlePayClick,handleEmptyCart }) => {
-
+const Cart = ({ cartData,onDeleteCat,handleEmptyCart ,handleSale ,catObj}) => {
+    const navigate = useNavigate();
+    const handlePayClick = () => {
+        handleSale()
+         navigate("/Invoice")
+      }
     console.log(cartData)
     let totalPrice = 0;
     return (
@@ -24,7 +29,7 @@ const Cart = ({ cartData,onDeleteCat,handlePayClick,handleEmptyCart }) => {
 }
 
 const CartItem = ({ cat, onDeleteCat }) => {
-    console.log("c", cat)
+    
     return (
         <div className="cart-item">
             <img src={cat.imgSrc} />

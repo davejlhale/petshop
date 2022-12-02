@@ -17,6 +17,9 @@ const Home = ({ data, handleAddToCart, cartData }) => {
             />
           );
         })}
+        {data.length===0 ?   
+         <h1> sorry no cats left</h1>
+        :null}
       </div>
     </>
   );
