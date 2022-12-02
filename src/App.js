@@ -6,8 +6,9 @@ import CatInfo from "./CatInfo";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import { faker } from "@faker-js/faker";
-
+import Footer from "./components/Footer/footer";
 import imgIcon from "./images/cartIcon.png";
+
 function App() {
   const [catData, setCatData] = useState([]);
   const [cartData, setCartData] = useState([]);
@@ -19,7 +20,14 @@ function App() {
       const response = await fetch(
         "https://api.thecatapi.com/v1/breeds?limit=8"
       );
+
       let data = await response.json();
+      setCatData(() => {
+        return data;
+      });
+      setLoading(() => {
+        return false;
+      });
 
       setCatData(() => {
         return data;
@@ -61,6 +69,7 @@ function App() {
       setCartData(data);
     }
   };
+
   console.log("app: in app");
 
   //if datas empty return to wait for it before allowing routing
@@ -108,9 +117,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      {/*<Footer id="footer">
-      insert footer component here (either as html here or make a react component) 
-      </Footer> */}
+      <Footer />
     </>
   );
 }
