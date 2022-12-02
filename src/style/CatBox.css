@@ -8,7 +8,9 @@
   margin: 20px;
   align-items: center;
   border-radius: 1.5rem;
-  box-shadow: 10px 10px 10px 1px black;
+  /* box-shadow: 10px 10px 10px 1px black; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  transition: 270ms all ease-in-out;
 }
 
 .screen-wrapper {
@@ -21,9 +23,11 @@
 }
 
 .cat-box:hover {
-  background-color: #adb5bd;
+  /* background-color: #adb5bd; */
+
   transform: scale(1.05, 1.05);
-  box-shadow: 20px 20px 20px 1px black;
+  /* box-shadow: 20px 20px 20px 1px black; */
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .cat-box img {

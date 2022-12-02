@@ -58,6 +58,12 @@ function App() {
     console.log("****", cat);
     setCartData([...cartData, { name, price, breed, imgSrc }]);
     console.log("app: cartdata, ", cartData);
+    let data = [...catData];
+    const index = data.indexOf(cat);
+    if (index > -1) {
+      data.splice(index, 1);
+      setCatData(data);
+    }
   };
   const handleDeleteCat = (cat) => {
     let data = [...cartData];
