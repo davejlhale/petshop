@@ -1,4 +1,4 @@
-import { useState, useEffect, } from "react";
+
 import './style/Cart.css';
 import { useNavigate } from "react-router-dom";
 
@@ -32,7 +32,7 @@ const CartItem = ({ cat, onDeleteCat }) => {
     
     return (
         <div className="cart-item">
-            <img src={cat.imgSrc} />
+            <img alt={`bought cat named ${cat.name}`} src={cat.imgSrc} />
             <p>{cat.name}</p>
             <p>{cat.breed}</p>
             <p>{cat.price}</p>

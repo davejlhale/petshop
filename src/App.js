@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Cart from "./Cart";
 import CatInfo from "./CatInfo";
@@ -54,6 +54,7 @@ function App() {
     cartData.map((cat) => {;
       let catObj=cat.cat
       data = ( [...data, catObj])
+      return 0;
     })
 
     
@@ -69,7 +70,7 @@ function App() {
     data.map((cat, index) => {
       if (!cat.named) cat.named = faker.name.firstName();
       if (!cat.price) cat.price = faker.commerce.price(100, 1000, 2, "£");
-      // console.log(cat);
+      return 0;
     });
   };
   addNamePrice(catData);
