@@ -43,8 +43,15 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
 
     const cat = data.filter(cat => { return cat.id === passedInCatId })[0] //new
     console.log("catinfo: cat object =", cat);
-
-     
+const wait =()=> {
+    for (let i=0; i<100000000;i++){}
+}
+const handlebuy=()=>{
+ handleAddToCart(cat)
+ navigate("/")
+    
+}
+     if (cat===undefined || cat.named === undefined) { wait()};
     return (
         <div className="main-ct-info-wrapper">
             {/* display price and image */}
@@ -56,7 +63,7 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
                 <img id="img" alt={cat.name} src={cat.image.url} />
                 <div className="btns">
                     <button className="btn" onClick={() => handleClick()}>Back</button>
-                    <button className="add-btn" onClick={() => handleAddToCart(cat,catName,price)}>Add to cart</button>
+                    <button className="add-btn" onClick={(cat) => handlebuy(cat)}>Add to cart</button>
                 </div>
             </div>
 

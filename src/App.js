@@ -9,11 +9,9 @@ import { faker } from "@faker-js/faker";
 import Footer from "./components/Footer/footer";
 import imgIcon from "./images/cartIcon.png";
 import PageNotFound from "./PageNotFound";
-import Invoice from "./Invoice"
-
+import Invoice from "./Invoice";
 function App() {
   
-  // const navigate = useNavigate();
   const [catData, setCatData] = useState([]);
   const [cartData, setCartData] = useState([]);
   const [isLoading, setLoading] = useState(true);

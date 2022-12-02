@@ -55,8 +55,7 @@ export const NavBtn = styled.nav`
     align-items: center;
     margin-right: 24px;
 
-    @media screen and (max-width: 750px) {
-        display: none;
+   
     }
 `
 

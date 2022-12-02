@@ -6,7 +6,7 @@ const Navbar = ({ count, imgIcon }) => {
   return (
     <>
       <Nav>
-        <Bars />
+      
         <NavLink to='/'>
           <h1>CATS4LYF</h1>
         </NavLink>
@@ -21,7 +21,7 @@ const Navbar = ({ count, imgIcon }) => {
             <p id="cart-item-count">{count}</p>
           </NavBtnLink>
         </NavBtn>
-        <Bars />
+     
       </Nav>
     </>
   );
