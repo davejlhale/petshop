@@ -8,6 +8,7 @@ import "./App.css";
 import { faker } from "@faker-js/faker";
 import Footer from "./components/Footer/footer";
 import imgIcon from "./images/cartIcon.png";
+import Invoice from "./Invoice";
 
 function App() {
   const [catData, setCatData] = useState([]);
@@ -99,9 +100,7 @@ function App() {
                 cartData={cartData}
               />
             }
-          >
-            Home
-          </Route>
+          ></Route>
           <Route
             path="/CatInfo"
             element={
@@ -111,15 +110,12 @@ function App() {
                 cartData={cartData}
               />
             }
-          >
-            cat Info{" "}
-          </Route>
+          ></Route>
           <Route
             path="/Cart"
             element={<Cart cartData={cartData} onDeleteCat={handleDeleteCat} />}
-          >
-            cart
-          </Route>
+          ></Route>
+          <Route path="/Invoice" element={<Invoice />}></Route>
         </Routes>
       </BrowserRouter>
 
