@@ -9,6 +9,10 @@ export const Nav = styled.nav`
     justify-content: space-between;
     padding: 2rem ;
     z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 `
 
 export const NavLink = styled(Link)`

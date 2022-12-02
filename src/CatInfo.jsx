@@ -70,7 +70,7 @@ const handlebuy=()=>{
             {/* description*/}
             <div className="desc-wrapper">
                 <div id="cat-desc">
-                    <p>description: {cat.description} It is {cat.temperament}.</p>
+                    <p> {cat.description} It is {cat.temperament}.</p>
                 </div>
 
                 {/* description make it a table display!*/}
