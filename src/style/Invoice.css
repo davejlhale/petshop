@@ -1,14 +1,17 @@
 .main {
   height: 800px;
-  background-image: url("../images/cat.jpg");
-  background-size: 650px;
   padding-top: 2rem;
+  background: url("../images/cat.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .invoice-wrapper {
   width: 60%;
   margin: 5rem auto;
-  background-color: #acc7c700;
+  background-color: #2f304cba;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
