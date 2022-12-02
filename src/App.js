@@ -20,7 +20,7 @@ function App() {
     const fetchData = async () => {
       console.log("app:useeffect: fetching data");
       const response = await fetch(
-        "https://api.thecatapi.com/v1/breeds?limit=8"
+        "https://api.thecatapi.com/v1/breeds?limit=20"
       );
 
       let data = await response.json();
