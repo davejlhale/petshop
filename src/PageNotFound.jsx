@@ -9,7 +9,7 @@ const PageNotFound = () => {
 
         <h4> why not try one of these links</h4>
 <div id="page-not-found-links">
-        <Link classname to="/">Cats4Lyf Home Page</Link>
+        <Link  to="/">Cats4Lyf Home Page</Link>
         <Link to="/catInfo">Our Cat of the day</Link>
         </div>
     </div>
