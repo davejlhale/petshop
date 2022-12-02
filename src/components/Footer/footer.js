@@ -3,8 +3,6 @@ import {
 Box,
 Container,
 Row,
-Column,
-FooterLink,
 Heading,
 } from "./FooterStyles";
 
