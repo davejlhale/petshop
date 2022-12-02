@@ -48,8 +48,8 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
             {/* display price and image */}
             <div className="cat-im-wrapper">
                 <div>
-                    <p className="name">Name: {catName}</p>
-                    <p>Price: <span>{price}</span></p>
+                    <p className="name">Name: {cat.named}</p>
+                    <p>Price: <span>{cat.price}</span></p>
                 </div>
                 <img id="img" alt={cat.name} src={cat.image.url} />
                 <div className="btns">
