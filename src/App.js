@@ -10,6 +10,7 @@ import "./App.css";
 import { faker } from "@faker-js/faker";
 import Footer from './components/Footer/footer';
 import imgIcon from "./images/cartIcon.png"
+import PageNotFound from "./PageNotFound";
 
 function App() {
   const [catData, setCatData] = useState([]);
@@ -23,36 +24,36 @@ function App() {
         "https://api.thecatapi.com/v1/breeds?limit=8"
       );
 
-      const data = await response.json();
+      let data = await response.json();
       setCatData(() => { return data });
       setLoading(() => { return false })
 
-      let data = await response.json();
-       
+      
+
       setCatData(() => {
         return data;
       });
       setLoading(() => {
         return false;
       });
-   
+
 
     };
     fetchData();
   }, []);
 
 
-  const addNamePrice=(data)=> {
+  const addNamePrice = (data) => {
     console.log("adding names")
-    if (data===undefined || data===null) {return}
-    data.map((cat,index)=>{
-      if(!cat.named)
-      cat.named =  faker.name.firstName();
-      if(!cat.price)
-      cat.price =  faker.commerce.price(100, 1000, 2, "£");
-       console.log(cat)
+    if (data === undefined || data === null) { return }
+    data.map((cat, index) => {
+      if (!cat.named)
+        cat.named = faker.name.firstName();
+      if (!cat.price)
+        cat.price = faker.commerce.price(100, 1000, 2, "£");
+      console.log(cat)
     });
-   
+
   }
   addNamePrice(catData);
   const onAddToCart = (cat, name, price) => {
@@ -93,23 +94,39 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <Home
-                handleAddToCart={onAddToCart}
-                data={catData}
-                cartData={cartData}
-              />
-            }
-          >
-          
-            Home
-          </Route>
-          <Route path="/CatInfo" element={<CatInfo handleAddToCart={onAddToCart} data={catData}  cartData={cartData} />}>
-            cat Info{" "}
-          </Route>
-          <Route path="/Cart" element={<Cart cartData={cartData} onDeleteCat={handleDeleteCat}/>}>
-            cart
-          </Route>
+            element={ <Home
+              handleAddToCart={onAddToCart}
+              data={catData}
+              cartData={cartData} 
+            />}
+          />
+          <Route 
+            path="/CatInfo" 
+            element={<CatInfo 
+              handleAddToCart={onAddToCart} 
+              data={catData} 
+              cartData={cartData} 
+            />} 
+           />
+          <Route 
+            path="/Cart" 
+            element={<Cart 
+              cartData={cartData} 
+              onDeleteCat={handleDeleteCat} 
+            />} 
+          />
+          <Route 
+            path="*" 
+            element={<PageNotFound 
+            />} 
+          />
+          <Route 
+            path="/Invoice" 
+            element={<Invoice 
+            />} 
+          />
+            
+         
         </Routes>
       </BrowserRouter>
 

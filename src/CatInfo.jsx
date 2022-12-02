@@ -43,13 +43,14 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
     const cat = data.filter(cat => { return cat.id === passedInCatId })[0] //new
     console.log("catinfo: cat object =", cat);
 
+    // if(cat.named) {return}
     return (
         <div className="main-ct-info-wrapper">
             {/* display price and image */}
             <div className="cat-im-wrapper">
                 <div>
-                    <p className="name">Name: {catName}</p>
-                    <p>Price: {price}</p>
+                    <p className="name">Name: {cat.named}</p>
+                    <p>Price: {cat.price}</p>
                 </div>
                 <img id="img" alt={cat.name} src={cat.image.url} />
                 <div className="btns">

@@ -40,7 +40,7 @@ const CatBox = ({ cat, cartData, handleAddToCart }) => {
       </div>
     );
   } catch (err) {
-    console.log(err);
+    console.debug(err);
   }
 };
 

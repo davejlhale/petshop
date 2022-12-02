@@ -17,7 +17,7 @@ const Navbar = ({ count, imgIcon }) => {
         </NavMenu>
         <NavBtn>
           <NavBtnLink id="cart-icon" to='/Cart'>
-            <img alt="cat sat in shopping cart" src={imgIcon} />
+            <img alt="cat sat in shopping"src={imgIcon} />
             <p id="cart-item-count">{count}</p>
           </NavBtnLink>
         </NavBtn>
