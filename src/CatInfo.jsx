@@ -47,7 +47,7 @@ const wait =()=> {
     for (let i=0; i<100000000;i++){}
 }
 const handlebuy=()=>{
- handleAddToCart(cat)
+ handleAddToCart(cat,cat.name,cat.price)
  navigate("/")
     
 }
