@@ -96,3 +96,10 @@ span {
 #last-row {
   border-bottom: none;
 }
+/* 
+@media screen {
+  .main-ct-info-wrapper {
+    min-height: 1000px;
+    padding: 2rem;
+  }
+} */
