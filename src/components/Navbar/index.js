@@ -1,5 +1,5 @@
 import React from 'react'
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
+import { Nav, NavLink, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
 import "./icon.css"
 
 const Navbar = ({ count, imgIcon }) => {
@@ -11,9 +11,9 @@ const Navbar = ({ count, imgIcon }) => {
           <h1>CATS4LYF</h1>
         </NavLink>
         <NavMenu>
-          <NavLink to='/' activeStyle>Home</NavLink>&nbsp&nbsp
+          <NavLink to='/' >Home</NavLink>&nbsp&nbsp
           {/* <NavLink to='/Cart' activeStyle>Cart</NavLink>&nbsp&nbsp */}
-          <NavLink to='/CatInfo' activeStyle>CatInfo</NavLink>
+          <NavLink to='/CatInfo' >Most In Need</NavLink>
         </NavMenu>
         <NavBtn>
           <NavBtnLink id="cart-icon" to='/Cart'>
