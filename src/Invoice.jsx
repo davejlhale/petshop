@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import "./style/Invoice.css";
 
 const Invoice = () => {
@@ -10,8 +11,8 @@ const Invoice = () => {
         <h3>Thank you for your purchase!</h3>
         <p>our order will be delivered to you within 3 working days by our delivery team.</p>y
       </div>
-      <div className="btns">
-        <button className="btn" onClick={() => handleClick()}>Back to shop</button>   
+      <div className="link-wrapper">
+       <Link className="btns" to="/">Back to Shop</Link> 
       </div>
     </>
   );
