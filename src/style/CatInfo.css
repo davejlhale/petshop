@@ -42,9 +42,12 @@ span {
 .add-btn {
   width: 8rem;
   height: 3rem;
-  border: 2px solid #00009a;
   border-radius: 1rem;
   font-size: 1.2rem;
+  background-color: #495057;
+  color: white;
+  border: none;
+  box-shadow: 1px 1px 1px 1px black;
 }
 
 .btn:hover,
