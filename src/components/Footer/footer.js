@@ -1,33 +1,33 @@
 import React from "react";
 import {
-Box,
-Container,
-Row,
-Heading,
+	Box,
+	Container,
+	Row,
+	Heading,
+	ColouredHeading,
+	OutboundLink
 } from "./FooterStyles";
 
 const Footer = () => {
-return (
-	<Box>
-	<h1 style={{ color: "green",
-				textAlign: "center",
-				marginTop: "-50px" }}>
-		Cats4LYF: Group A " Dave, Kian , Charine , Max and Jack"
-	</h1>
-	<br/>
-
-	<hr/>
-	<Container>
-	<br/>
-	<br/>
-		<Row>
-		<Heading>About Us</Heading>
-		<Heading>Services</Heading>
-		<Heading>Contact Us</Heading>
-		<Heading>Social Media</Heading>
-		</Row>
-	</Container>
-	</Box>
-);
+	return (
+		<Box>
+			<Container>
+				<Row>
+					<ColouredHeading id="coloured">	Cats4LYF: Group A </ColouredHeading>
+					<ColouredHeading id="coloured"> <OutboundLink href="https://github.com/kianZare/">Kian</OutboundLink> </ColouredHeading>
+					<ColouredHeading id="coloured"> Chadrine </ColouredHeading>
+					<ColouredHeading id="coloured">	Max </ColouredHeading>
+					<ColouredHeading id="coloured"> Jack </ColouredHeading>
+					<ColouredHeading id="coloured"><OutboundLink href="https://github.com/davejlhale/">	Dave </OutboundLink></ColouredHeading>
+				</Row>
+				<Row>
+					<Heading>About Us</Heading>
+					<Heading>Services</Heading>
+					<Heading>Contact Us</Heading>
+					<Heading>Social Media</Heading>
+				</Row>
+			</Container>
+		</Box>
+	);
 };
 export default Footer;

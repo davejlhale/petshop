@@ -1,21 +1,35 @@
 #page-not-found {
-    color:#222;
-    font-size: 1.5em;;
+    color: #222;
+    font-size: 1.5em;
+    min-height:90vh;
+    background: url("../images/cat.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: max-content;
+    background:rgb(0,0,0);
+    background: transparent\9;
+    background:rgba(0,0,0,0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+    zoom: 1;
+    padding: 50px;
 }
 
-#page-not-found h3{
-margin-top:50px;
+#page-not-found h3 {
+    padding-top: 50px;
 }
 
 #page-not-found h4 {
-    margin-top:30px
+    margin-top: 30px
 }
 
-#page-not-found-links{
+#page-not-found-links {
 
-  display:flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
-#page-not-found-links >* {
-    padding:10px;
+
+#page-not-found-links>* {
+    padding: 10px;
 }
