@@ -14,9 +14,9 @@ const Footer = () => {
 			<Container>
 				<Row>
 					<ColouredHeading id="coloured">	Cats4LYF: Group A </ColouredHeading>
-					<ColouredHeading id="coloured"> <OutboundLink href="https://github.com/kianZare/">Kian</OutboundLink> </ColouredHeading>
-					<ColouredHeading id="coloured"> Chadrine </ColouredHeading>
-					<ColouredHeading id="coloured">	Max </ColouredHeading>
+					<ColouredHeading id="coloured"> <OutboundLink href="https://github.com/kianZare/"> Kian </OutboundLink> </ColouredHeading>
+					<ColouredHeading id="coloured"> <OutboundLink href="https://github.com/Chadrine-Azimendem/" > Chadrine </OutboundLink></ColouredHeading>
+					<ColouredHeading id="coloured">	<OutboundLink href="https://github.com/mcowen6/ "> Max </OutboundLink></ColouredHeading>
 					<ColouredHeading id="coloured"> Jack </ColouredHeading>
 					<ColouredHeading id="coloured"><OutboundLink href="https://github.com/davejlhale/">	Dave </OutboundLink></ColouredHeading>
 				</Row>
