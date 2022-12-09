@@ -78,6 +78,7 @@ span {
   width: 100%;
   margin-top: 2rem;
   border: 2px solid #4e4e5c;
+  
 }
 
 .caractcs-item {
@@ -92,5 +93,5 @@ span {
   border-bottom: none;
 }
 
-.main-ct-info-wrapper{margin-top:110px;
-margin-bottom:50px;}
+.main-ct-info-wrapper{margin-top:110px;margin-bottom:90px;
+}
