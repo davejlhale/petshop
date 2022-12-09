@@ -12,6 +12,7 @@ export const Nav = styled.nav`
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    box-shadow: rgba(0, 0, 0, 0.29) 0px 10px 20px, rgba(0, 0, 0, 0.33) 0px 8px 8px, rgba(0, 0, 0, 0.53) 0px 3px 3px;
 `
 
 export const NavLink = styled(Link)`
