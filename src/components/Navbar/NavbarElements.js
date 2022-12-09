@@ -12,8 +12,6 @@ export const Nav = styled.nav`
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
- 
-  
 `
 
 export const NavLink = styled(Link)`
@@ -31,7 +29,7 @@ export const NavLink = styled(Link)`
     &:hover{
         color: #15cdfc;
         transition: all 0.3s ease-in-out;
-}
+    }
 `
 
 export const NavMenu = styled.div`
@@ -40,8 +38,7 @@ export const NavMenu = styled.div`
     font-size: 24px;
 
     @media screen and (max-width: 750px) {
-        display: none;
-        
+        display: none;    
     }
 `
 export const NavBtn = styled.nav`
@@ -51,6 +48,34 @@ export const NavBtn = styled.nav`
     }
 `
 
-export const NavBtnLink = styled(Link)`
-   
+export const NavBtnLink = styled(Link)` 
+    width:100px;
+    background-color: none;
+    height:50px;
+    text-decoration: none;
+    text-align: center;  
+    img {
+        width:100px;
+        background-color: none;
+        height:50px;
+        transition: 300ms all ease-in-out;
+        transform: scale(1);
+
+        &:hover {
+            transition: 300ms all ease-in-out;
+            transform: scale(1.2);
+        }
+    }
+    p{
+        position:relative;
+        width:fit-content;
+        left: 10px;
+        top:-20px;
+        background-color: rgb(163, 53, 53);
+        color:black;
+        text-decoration: none;
+        padding:2px 10px;
+        border-radius: 50%;
+        border:2px ridge silver;
+    }
 `

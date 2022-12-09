@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, NavLink, NavMenu, NavBtn, NavBtnLink } from './NavbarElements';
-import "./icon.css"
+
 
 const Navbar = ({ count, imgIcon }) => {
   return (
@@ -13,9 +13,9 @@ const Navbar = ({ count, imgIcon }) => {
           <NavLink to='/CatInfo' >Most In Need</NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink id="cart-icon" to='/Cart'>
-            <img alt="cat sat in shopping" src={imgIcon} />
-            <p id="cart-item-count">{count}</p>
+          <NavBtnLink to='/Cart'>
+            <img alt="cat sat in shopping basket" src={imgIcon} />
+            <p>{count}</p>
           </NavBtnLink>
         </NavBtn>
       </Nav>
