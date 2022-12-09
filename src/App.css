@@ -6,5 +6,24 @@
 
 body {
   background-color: #ced4da;
+  margin-top:90px;
 }
+
+button {
+  background-color: #495057;
+  padding: 8px;
+  border-radius: 15px;
+  color: white;
+  width: 110px;
+  border: none;
+  font-size: 1rem;
+  /* box-shadow: 1px 1px 1px 1px black; */
+  border:3px outset rgb(81, 77, 77);
+}
+
+button:hover {
+  cursor: pointer;
+  border:3px inset #333;
+}
+
 
