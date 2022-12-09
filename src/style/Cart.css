@@ -1,7 +1,7 @@
 #cart-wrapper {
     display: flex;
     flex-direction: column;
-    margin:0px auto 20px;
+    margin:100px auto 20px;
     padding:20px;
     min-height: 70vh;
     font-size: 1.2em;
@@ -9,13 +9,12 @@
     border:1px solid #505963;
     background-color:#eaebec;
     border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 20px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .cart-item {
     display: flex;
     width: 100%;
     min-height:10vh;
-    
     margin:3px auto;  
     border:1px solid #505963;
     background-color:#c6d4e1;
