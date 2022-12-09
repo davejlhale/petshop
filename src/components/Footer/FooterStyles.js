@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-	padding: 40px 60px;
+	padding: 30px 60px;
 	background: black;
+	box-shadow: rgba(0, 0, 0, 0.29) 0px -12px 12px, rgba(0, 0, 0, 0.33) 0px -8px 8px, rgba(0, 0, 0, 0.53) 0px -3px 3px;
+
 	`
 export const Container = styled.div`
 	display: flex;
