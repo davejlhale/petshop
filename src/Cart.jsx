@@ -25,12 +25,14 @@ const Cart = ({ cartData, onDeleteCat, handleEmptyCart, handleSale, catObj }) =>
     )
 
 }
-
+const handleImgError = e => {
+    e.target.src = "https://cdn2.thecatapi.com/images/13MkvUreZ.jpg"
+  }
 const CartItem = ({ cat, onDeleteCat }) => {
 
     return (
         <div className="cart-item">
-            <img alt={`bought cat named ${cat.name}`} src={cat.imgSrc} />
+            <img alt={`bought cat named ${cat.name}`} src={cat.imgSrc} onError={handleImgError}/>
             <p>{cat.name}</p>
             <p>{cat.breed}</p>
             <p>{cat.price}</p>

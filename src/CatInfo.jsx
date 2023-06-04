@@ -30,7 +30,9 @@ const CatInfo = ({ data,handleAddToCart,cartData }) => {
         return id;
     }//end of getSelectedCatId()
 
-    
+    const handleImgError = e => {
+        e.target.src = "https://cdn2.thecatapi.com/images/13MkvUreZ.jpg"
+      }
 
     const handleClick = () => {
       console.log("catinfo: home btn clicked", cat.id);
@@ -60,7 +62,7 @@ const handlebuy=()=>{
                     <p className="name">Name: {cat.named}</p>
                     <p>Price: <span>{cat.price}</span></p>
                 </div>
-                <img id="img" alt={cat.name} src={cat.image.url} />
+                <img id="img" alt={cat.name} src={cat.image} onError={handleImgError} />
                 <div className="btns">
                     <button className="btn" onClick={() => handleClick()}>Back</button>
                     <button className="add-btn" onClick={(cat) => handlebuy(cat)}>Add to cart</button>

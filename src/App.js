@@ -15,7 +15,7 @@ function App() {
   const [catData, setCatData] = useState([]);
   const [cartData, setCartData] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  //fetch 8 cats
+  //fetch 20 cats
   useEffect(() => {
     const fetchData = async () => {
       console.log("app:useeffect: fetching data");
@@ -24,6 +24,7 @@ function App() {
       );
 
       let data = await response.json();
+
       setCatData(() => {
         return data;
       });
@@ -41,7 +42,7 @@ function App() {
     fetchData();
   }, []);
 
- 
+
 
   const handleEmptyCart = () => {
     console.log("handle clear cart")
@@ -68,15 +69,22 @@ function App() {
     data.map((cat, index) => {
       if (!cat.named) cat.named = faker.name.firstName();
       if (!cat.price) cat.price = faker.commerce.price(100, 1000, 2, "£");
+      if(!cat.image) cat.image = "https://cdn2.thecatapi.com/images/MTc5MzIwNQ.jpg";
+      
       return 0;
     });
+
+    //adding image url
+    // /live_ykbMtDoAOfEAIApFu65UkKXnvNZ2s6XlCII77n4uFKyCKIBK9o0nfK5EdOJla1T9
+
+    
   };
   addNamePrice(catData);
 
   const onAddToCart = (cat, name, price) => {
     console.log("app: add to cart", name, price, cat);
     let breed = cat.name;
-    let imgSrc = cat.image.url;
+    let imgSrc = cat.image;
     console.log("****", cat);
     setCartData([...cartData, { name, price, breed, imgSrc,cat }]);
     console.log("app: cartdata, ", cartData);
